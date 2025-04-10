@@ -8,13 +8,12 @@
  * 1. Makes sure that some fonts are better rendered
  * 2. Set font to lining figures
  */
- html {
+html {
   box-sizing: border-box;
-
 }
 
 body {
-  @apply font-default text-black;
+  @apply font-default text-tertiary;
 }
 
 
@@ -76,7 +75,7 @@ hr {
 p {
   margin: 0;
   line-height: inherit;
-  @apply text-base leading-15;
+  @apply text-base leading-[1.66];
 
   & + &{
     margin-top: 16px;

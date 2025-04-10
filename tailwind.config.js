@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: [
     'index.html',
@@ -6,6 +8,40 @@ module.exports = {
     'src/js/*.js',
   ],
   theme: {
+    colors: {
+      'current': 'currentColor',
+      'transparent': 'transparent',
+      'white': '#fff',
+      'primary': {
+        DEFAULT: '#0A5B8A',
+        900: '#043873',
+        800: '#4F9CF9',
+        400: '#A7CEFC',
+      },
+      'secondary': {
+        DEFAULT: '#FFE492',
+      },
+      'tertiary': {
+        DEFAULT: '#212529',
+      },
+      // 'auxiliary': {
+      //   DEFAULT: '#EFF4F7',
+      // }
+    },
+    screens: {
+      'mobile': '540px',
+      'tablet': '768px',
+      'tablet-xl': '992px',
+      'laptop': '1024px',
+      'desktop': '1300px',
+      'l-desktop': '1440px',
+      'large': '1680px',
+      // => @media (max-width: ..px) { ... }
+      "mobile-tablet-xl": { max: "991px" },
+      "mobile-tablet": { max: "767px" },
+      "mobile-laptop": { max: "1023px" },
+      "mobile-l-desktop": { max: "1439px" },
+    },
     fontFamily: {
       default: [
         '"Inter"',
@@ -13,44 +49,92 @@ module.exports = {
       ],
     }, 
     fontSize: {
-      'xs': '12px',
-      'sm': '14px',
-      'base': '16px',
-      'base2': '18px',
-      'md': '20px',
-      '2md': '24px',
-      'lg': '32px',
-      '2lg': '34px',
-      'xl': '40px',
-      '2xl': '42px',
-      '3xl': '54px',
+      'h1m': '42px',
+      'h1d': '72px',
+      'h2m': '36px',
+      'h2d': '64px',
+      'h3m': '32px',
+      'h3d': '54px',
+      'h4m': '24px',
+      'h4d': '36px',
+      'h5m': '20px',
+      'h5d': '28px',
+      's': '16px',
+      base: '18px',
+      'm': '24px',
+      'ml': '36px',
     },
     lineHeight: {
-      10: '1',
-      11: '1.1',
-      115: '1.15',
-      12: '1.2',
       125: '1.25',
-      13: '1.3',
-      14: '1.4',
-      145: '1.45',
-      15: '1.5',
-      16: '1.6',
-      17: '1.7',
-      18: '1.8',
-      19: '1.9',
-      20: '2',
-      225: '2.25',
     },
-    container: {
-      center: true,
-      padding: '16px',
-      screens: {
-        DEFAULT: '100%',
-        xl: '1272px',
+    letterSpacing: {
+      // 'none': '0',
+      // 'ssm': '0.005em',
+      // 'xsm': '0.015em',
+      'sm': '0.02em',
+      // 'sm1': '0.025em',
+      // 'md': '0.03em',
+      // 'lg': '0.05em',
+    },
+    maxWidth: {
+      'none': 'none',
+      16: '16px', // 1em
+    },
+    minWidth: {
+      20: '20px',
+    },
+    minHeight: {
+      'screen': '100vh',
+    },
+    boxShadow: {
+      DEFAULT: '0px 10px 20px #0D073629',
+    },
+    borderRadius: {
+      DEFAULT: '4px',
+      'full': '100%',
+    },
+    extend: {
+      width: {
+        12: '12px',
       },
-    },
-    extend: {},
+      height: {
+        12: '12px',
+      },
+      zIndex: {
+        '-1': -1,
+      },
+    }
   },
-  plugins: [],
+  variants: {
+    extend: {
+      borderWidth: ['hover', 'last', 'first'],
+      backgroundColor: ['active'],
+      fontWeight: ['hover', 'active'],
+    },
+  },
+  plugins: [
+    plugin(function ({ addComponents, theme }) {
+      const fontSizes = theme("fontSize");
+      const sizeKeys = Object.keys(fontSizes);
+      const components = {};
+
+      sizeKeys.forEach((minSize) => {
+        sizeKeys.forEach((maxSize) => {
+          if (minSize !== maxSize) {
+            const minFontSize = parseInt(fontSizes[minSize]);
+            const maxFontSize = parseInt(fontSizes[maxSize]);
+            const minScreen = 390;
+            const maxScreen = 1440;
+            const corection = (maxScreen - minScreen) / (maxFontSize - minFontSize);
+
+            components[`.text-${minSize}-${maxSize}`] = {
+              fontSize: `max(${minFontSize}px, calc(${minFontSize}px + (100vw - ${minScreen}px) / ${corection}))`,
+            };
+          }
+        });
+      });
+
+      addComponents(components);
+    }),
+  ],
 }
