@@ -1,0 +1,25 @@
+{
+    "name": "project",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "",
+    "description": "starter kit with webpack",
+    "main": "index.html",
+    "scripts": {
+        "build": "mix",
+        "watch": "mix watch"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.2",
+        "browser-sync": "^2.27.7",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "cross-env": "^7.0.3",
+        "jquery": "^3.5.1",
+        "laravel-mix": "^6.0.42",
+        "postcss": "^8.4.6",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.49.7",
+        "sass-loader": "^12.4.0",
+        "tailwindcss": "^3.0.21"
+    }
+}

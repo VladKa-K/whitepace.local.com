@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+@import '1-Settings/settings';
+
+@import '2-Elements/elements';
+
+@import '3-Components/components';
+
+@import '4-Sections/sections';
+
+@import '5-Organisms/organisms';
+
+@import '6-Utilities/utilities';
+
+@tailwind utilities; 

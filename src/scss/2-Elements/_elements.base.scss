@@ -1,0 +1,84 @@
+/* ==========================================================================
+ * Basic elements (no class selectors allowed)
+ * ========================================================================== */
+
+/**
+ * Set up the html
+ *
+ * 1. Makes sure that some fonts are better rendered
+ * 2. Set font to lining figures
+ */
+ html {
+  box-sizing: border-box;
+
+}
+
+body {
+  @apply font-default text-black;
+}
+
+
+/**
+ * [1] Turn off text-shadow when selecting text for better readability
+ */
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+/* Remove default margin around figure
+ */
+figure {}
+
+/**
+ * [1] Setting 'vertical-align' removes the whitespace that appears under 'img'
+ *	   elements when they are dropped into a page as-is. Safer alternative to
+ *	   using 'display: block;'.
+ * [2] Remove border / especially on older browsers
+ */
+img,
+svg {
+  display: block;
+  vertical-align: middle;
+  /*[1]*/
+  border: none;
+  /*[2]*/
+  max-width: 100%;
+  height: auto;
+}
+
+
+a {
+  text-decoration-skip-ink: auto; // pretty underlining links
+  text-decoration: none;
+}
+
+// Reset all top and bottom margins
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dd,
+figure,
+pre,
+table,
+fieldset,
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+  line-height: inherit;
+  @apply text-base leading-15;
+
+  & + &{
+    margin-top: 16px;
+  }
+}
