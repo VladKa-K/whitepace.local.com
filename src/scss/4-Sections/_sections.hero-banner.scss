@@ -1,0 +1,37 @@
+.s-hero-banner {
+    @apply bg-primary;
+    padding: clamp(80px, 72.9577px + 1.8779vw, 100px) 0;
+}
+
+.s-hero-banner__row {
+    @apply flex flex-col gap-y-[60px];
+    @apply tablet-xl:flex-row tablet-xl:items-center;
+    column-gap: clamp(24px, 21.1831px + 0.7512vw, 32px);
+}
+
+.s-hero-banner__col-content {
+    @apply text-center text-white;
+    @apply tablet-xl:text-start;
+
+    .c-button {
+        margin-top: clamp(30px, 19.4366px + 2.8169vw, 60px);
+    }
+}
+
+.s-hero-banner__title {
+    @apply font-bold text-ml-h2d leading-[1.2];
+    margin-bottom: clamp(16px, 13.1831px + 0.7512vw, 24px);
+}
+
+.s-hero-banner__description {
+    @apply text-base-h5m leading-[1.6];
+}
+
+.s-hero-banner__col-img {
+    @apply overflow-hidden;
+    aspect-ratio: 685 / 456;
+
+    img {
+        @apply w-full h-full object-cover;
+    }
+}

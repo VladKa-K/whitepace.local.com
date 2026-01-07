@@ -68,13 +68,7 @@ module.exports = {
       125: '1.25',
     },
     letterSpacing: {
-      // 'none': '0',
-      // 'ssm': '0.005em',
-      // 'xsm': '0.015em',
       'sm': '0.02em',
-      // 'sm1': '0.025em',
-      // 'md': '0.03em',
-      // 'lg': '0.05em',
     },
     maxWidth: {
       'none': 'none',
@@ -123,7 +117,7 @@ module.exports = {
           if (minSize !== maxSize) {
             const minFontSize = parseInt(fontSizes[minSize]);
             const maxFontSize = parseInt(fontSizes[maxSize]);
-            const minScreen = 390;
+            const minScreen = 375;
             const maxScreen = 1440;
             const corection = (maxScreen - minScreen) / (maxFontSize - minFontSize);
 
