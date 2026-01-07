@@ -667,6 +667,44 @@ li + li {
   margin-top: 0;
 }
 
+.c-button {
+  cursor: pointer;
+  border-style: none;
+  text-decoration-line: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.c-button__primary {
+  font-size: max(18px, calc(18px + (100vw - 375px) / 532.5));
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 156 249 / var(--tw-bg-opacity));
+  line-height: 1.6;
+  padding: clamp(16px, 14.5915px + 0.3756vw, 20px) clamp(20px, 17.8873px + 0.5634vw, 26px);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.c-button__primary:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.c-button__primary:hover svg {
+  --tw-translate-x: 5px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.c-button__primary svg {
+  flex-shrink: 0;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .s-hero-banner {
   --tw-bg-opacity: 1;
   background-color: rgb(10 91 138 / var(--tw-bg-opacity));
