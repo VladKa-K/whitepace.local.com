@@ -1,12 +1,29 @@
 .s-hero-banner {
-    @apply bg-primary;
-    padding: clamp(80px, 72.9577px + 1.8779vw, 100px) 0;
+    @apply bg-primary relative;
+    padding: clamp(80px, 72.9577px + 1.8779vw, 9999px) 0;
+}
+
+.s-hero-banner__pattern {
+    @apply absolute w-full h-full top-0 left-0 overflow-hidden;
+
+    svg {
+        @apply absolute w-full h-full;
+    }
+}
+
+.s-hero-banner__pattern--mobile {
+    @apply tablet-xl:hidden;
+}
+
+.s-hero-banner__pattern--desktop {
+    @apply hidden;
+    @apply tablet-xl:block;
 }
 
 .s-hero-banner__row {
     @apply flex flex-col gap-y-[60px];
     @apply tablet-xl:flex-row tablet-xl:items-center;
-    column-gap: clamp(24px, 21.1831px + 0.7512vw, 32px);
+    column-gap: clamp(24px, 4.2817px + 5.2582vw, 9999px);
 }
 
 .s-hero-banner__col-content {
@@ -14,17 +31,17 @@
     @apply tablet-xl:text-start;
 
     .c-button {
-        margin-top: clamp(30px, 19.4366px + 2.8169vw, 60px);
+        margin-top: clamp(30px, 19.4366px + 2.8169vw,9999px);
     }
 }
 
 .s-hero-banner__title {
     @apply font-bold text-ml-h2d leading-[1.2];
-    margin-bottom: clamp(16px, 13.1831px + 0.7512vw, 24px);
+    margin-bottom: clamp(16px, 13.1831px + 0.7512vw, 9999px);
 }
 
 .s-hero-banner__description {
-    @apply text-base-h5m leading-[1.6];
+    @apply text-base-h4m leading-[1.6];
 }
 
 .s-hero-banner__col-img {

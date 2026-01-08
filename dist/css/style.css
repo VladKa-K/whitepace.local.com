@@ -629,7 +629,7 @@ p + p {
   margin-right: auto;
   width: 100%;
   max-width: 100%;
-  padding: 0 clamp(20px, 15.7746px + 1.1268vw, 32px);
+  padding: 0 clamp(20px, 15.7746px + 1.1268vw, 9999px);
 }
 
 /** =====================================================================================
@@ -684,7 +684,7 @@ li + li {
   --tw-bg-opacity: 1;
   background-color: rgb(79 156 249 / var(--tw-bg-opacity));
   line-height: 1.6;
-  padding: clamp(16px, 14.5915px + 0.3756vw, 20px) clamp(20px, 17.8873px + 0.5634vw, 26px);
+  padding: clamp(16px, 14.5915px + 0.3756vw, 9999px) clamp(20px, 17.8873px + 0.5634vw, 9999px);
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -703,12 +703,46 @@ li + li {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: clamp(20px, 16.4789px + 0.939vw, 999px);
 }
 
 .s-hero-banner {
+  position: relative;
   --tw-bg-opacity: 1;
   background-color: rgb(10 91 138 / var(--tw-bg-opacity));
-  padding: clamp(80px, 72.9577px + 1.8779vw, 100px) 0;
+  padding: clamp(80px, 72.9577px + 1.8779vw, 9999px) 0;
+}
+
+.s-hero-banner__pattern {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.s-hero-banner__pattern svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+
+  .s-hero-banner__pattern--mobile {
+    display: none;
+  }
+}
+
+.s-hero-banner__pattern--desktop {
+  display: none;
+}
+
+@media (min-width: 992px) {
+
+  .s-hero-banner__pattern--desktop {
+    display: block;
+  }
 }
 
 .s-hero-banner__row {
@@ -726,8 +760,8 @@ li + li {
 }
 
 .s-hero-banner__row {
-  -moz-column-gap: clamp(24px, 21.1831px + 0.7512vw, 32px);
-       column-gap: clamp(24px, 21.1831px + 0.7512vw, 32px);
+  -moz-column-gap: clamp(24px, 4.2817px + 5.2582vw, 9999px);
+       column-gap: clamp(24px, 4.2817px + 5.2582vw, 9999px);
 }
 
 .s-hero-banner__col-content {
@@ -743,18 +777,18 @@ li + li {
   }
 }
 .s-hero-banner__col-content .c-button {
-  margin-top: clamp(30px, 19.4366px + 2.8169vw, 60px);
+  margin-top: clamp(30px, 19.4366px + 2.8169vw, 9999px);
 }
 
 .s-hero-banner__title {
   font-size: max(36px, calc(36px + (100vw - 375px) / 38.035714285714285));
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: clamp(16px, 13.1831px + 0.7512vw, 24px);
+  margin-bottom: clamp(16px, 13.1831px + 0.7512vw, 9999px);
 }
 
 .s-hero-banner__description {
-  font-size: max(18px, calc(18px + (100vw - 375px) / 532.5));
+  font-size: max(18px, calc(18px + (100vw - 375px) / 177.5));
   line-height: 1.6;
 }
 
@@ -767,4 +801,8 @@ li + li {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.relative {
+  position: relative;
 }

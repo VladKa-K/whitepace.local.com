@@ -4,7 +4,7 @@
 
 .c-button__primary {
     @apply inline-flex items-center gap-[10px] text-base-h5m leading-[1.6] bg-primary-800 rounded-[8px];
-    padding: clamp(16px, 14.5915px + 0.3756vw, 20px) clamp(20px, 17.8873px + 0.5634vw, 26px);
+    padding: clamp(16px, 14.5915px + 0.3756vw, 9999px) clamp(20px, 17.8873px + 0.5634vw, 9999px);
     @apply transition-all duration-300 ease-in-out;
     
     &:hover {
@@ -18,5 +18,6 @@
     svg {
         @apply shrink-0;
         @apply transition-all duration-300 ease-in-out;
+        width: clamp(20px, 16.4789px + 0.939vw, 999px);
     }
 }
