@@ -28,7 +28,7 @@
 
 .s-hero-banner__col-content {
     @apply text-center text-white;
-    @apply tablet-xl:text-start;
+    @apply tablet-xl:text-start tablet-xl:w-1/2;
 
     .c-button {
         margin-top: clamp(30px, 19.4366px + 2.8169vw,9999px);
@@ -41,11 +41,15 @@
 }
 
 .s-hero-banner__description {
-    @apply text-base-h4m leading-[1.6];
+
+    p {
+        @apply text-base-h4m leading-[1.6];
+    }
 }
 
 .s-hero-banner__col-img {
     @apply overflow-hidden;
+    @apply tablet-xl:w-1/2;
     aspect-ratio: 685 / 456;
 
     img {
